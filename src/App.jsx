@@ -9,6 +9,12 @@ import ProjectsPage from './pages/ProjectsPage'
 import TasksPage from './pages/TasksPage'
 import CrmPage from './pages/CrmPage'
 import ChatPage from './pages/ChatPage'
+import KnowledgePage from './pages/KnowledgePage'
+import ContentPage from './pages/ContentPage'
+import ResearchPage from './pages/ResearchPage'
+import YouTubePage from './pages/YouTubePage'
+import ImagesPage from './pages/ImagesPage'
+import LinksPage from './pages/LinksPage'
 
 export default function App() {
   return (
@@ -23,7 +29,13 @@ export default function App() {
         <Route path="chat" element={<ChatPage />} />
         <Route path="settings" element={<SettingsPage />} />
         <Route path="agent" element={<AgentDetailPage />} />
-        
+        <Route path="knowledge" element={<KnowledgePage />} />
+        <Route path="content" element={<ContentPage />} />
+        <Route path="research" element={<ResearchPage />} />
+        <Route path="youtube" element={<YouTubePage />} />
+        <Route path="images" element={<ImagesPage />} />
+        <Route path="links" element={<LinksPage />} />
+
         {/* Legacy redirects */}
         <Route path="crm" element={<Navigate to="/clients" replace />} />
 

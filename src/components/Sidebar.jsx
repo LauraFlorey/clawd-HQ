@@ -12,6 +12,12 @@ import {
   ChevronLeft,
   ChevronRight,
   Terminal,
+  BookOpen,
+  PenTool,
+  Search,
+  Play,
+  ImageIcon,
+  Link,
 } from 'lucide-react'
 import clsx from 'clsx'
 import { useData } from '../context/DataProvider'
@@ -20,14 +26,20 @@ import { getMachineColor } from '../utils/formatters'
 // ─── Navigation definition ───────────────────────────────────────
 
 const mainNav = [
-  { name: 'Home',     to: '/',          icon: LayoutDashboard },
-  { name: 'Memory',   to: '/memory',    icon: Database },
-  { name: 'Projects', to: '/projects',  icon: Folder },
-  { name: 'Tasks',    to: '/tasks',     icon: CheckSquare },
-  { name: 'Clients',  to: '/clients',   icon: User },
-  { name: 'Costs',    to: '/costs',     icon: DollarSign },
-  { name: 'Chat',     to: '/chat',      icon: MessageSquare },
-  { name: 'Settings', to: '/settings',  icon: Settings },
+  { name: 'Home',      to: '/',           icon: LayoutDashboard },
+  { name: 'Memory',    to: '/memory',     icon: Database },
+  { name: 'Projects',  to: '/projects',   icon: Folder },
+  { name: 'Tasks',     to: '/tasks',      icon: CheckSquare },
+  { name: 'Clients',   to: '/clients',    icon: User },
+  { name: 'Costs',     to: '/costs',      icon: DollarSign },
+  { name: 'Knowledge', to: '/knowledge',  icon: BookOpen },
+  { name: 'Content',   to: '/content',    icon: PenTool },
+  { name: 'Research',  to: '/research',   icon: Search },
+  { name: 'YouTube',   to: '/youtube',    icon: Play },
+  { name: 'Images',    to: '/images',     icon: ImageIcon },
+  { name: 'Links',     to: '/links',      icon: Link },
+  { name: 'Chat',      to: '/chat',       icon: MessageSquare },
+  { name: 'Settings',  to: '/settings',   icon: Settings },
 ]
 
 // ─── Status dot (reused for Jinx) ────────────────────────────────
@@ -284,7 +296,7 @@ export default function Sidebar({ collapsed, onToggle }) {
         aria-label="Mobile tab bar"
       >
         {/* Show a subset of the most important tabs on mobile */}
-        {[mainNav[0], mainNav[1], mainNav[6], mainNav[7]].map((item) => (
+        {mainNav.filter((i) => ['/', '/memory', '/chat', '/settings'].includes(i.to)).map((item) => (
           <NavLink
             key={item.to}
             to={item.to}

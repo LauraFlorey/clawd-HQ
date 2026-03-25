@@ -6,10 +6,13 @@ import { formatTokenCount, formatSpend } from '../utils/formatters'
 
 const PAGE_TITLE_MAP = {
   '/': 'Home',
+  '/memory': 'Memory',
+  '/projects': 'Projects',
+  '/tasks': 'Tasks',
+  '/clients': 'Clients',
+  '/crm': 'CRM',
   '/costs': 'Costs',
   '/knowledge': 'Knowledge',
-  '/tasks': 'Tasks',
-  '/crm': 'CRM',
   '/content': 'Content',
   '/research': 'Research',
   '/youtube': 'YouTube',
